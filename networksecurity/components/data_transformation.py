@@ -11,9 +11,11 @@ from networksecurity.entity.config_entity import DataTransformationConfig
 from networksecurity.utils.main_utils.utils import save_numpy_array_data, save_object
 
 class DataTransformation:
-    def __init__(self, data_validation_atifact: DataValidationArtifact, data_transformation_config: DataTransformationConfig):
+    
+    def __init__(self, data_validation_artifact: DataValidationArtifact, data_transformation_config: DataTransformationConfig):
+
         try:
-            self.data_validation_artifact = data_validation_atifact
+            self.data_validation_artifact = data_validation_artifact
             self.data_transformation_config = data_transformation_config
             
         except Exception as e:
@@ -38,7 +40,7 @@ class DataTransformation:
         except Exception as e:
             raise NetworkSecurityException(e, sys) from e
     
-    def initiate_data_tranformation(self, ) -> DataTransformationArtifact:
+    def initiate_data_transformation(self, ) -> DataTransformationArtifact:
         
         try:
             logging.info("Data Transformation started")
